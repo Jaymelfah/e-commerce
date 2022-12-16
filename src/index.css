@@ -171,10 +171,43 @@
 
 .each-card {
   position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.scale {
+  top: 10px;
+  right: 15px;
+  position: absolute;
+}
+
+.each-card-img {
+  margin-bottom: 1rem;
+}
+
+.each-card-details {
+  background: rgba(140, 50, 19, 0.06);
+  margin-top: 1rem;
+  border-radius: 20px;
+  width: 90%;
+  height: 40%;
+  padding: 1.5rem;
+}
+
+.each-card-price {
+  padding-top: 2rem;
+  font-size: 18px;
+  color: #84be51;
 }
 
 .product-btn {
   position: absolute;
-  bottom: 9px;
-  right: 6px;
+  bottom: 30px;
+  right: 15px;
+}
+
+.each-icon {
+  background-color: #fff;
 }

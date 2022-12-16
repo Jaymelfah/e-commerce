@@ -1,6 +1,7 @@
 import React from "react";
 import cart from "../images/cart.png";
 import storeItems from "../data/items.json";
+import scale from "../images/scale.png";
 
 type CardProps = {
     id: number
@@ -38,16 +39,19 @@ export const Card = ({id, name, price, imgUrl, desc, del, setProductArray, produ
     }
    
   return (
-    <div className="each-card">
-      <img src={imgUrl} alt="product" />
-      <p>{name}</p>
-      <p>{desc}</p>
-      <p>{price}</p>
-      <p>{del}</p>
+    <div className="each-card flex">
+      <img className="scale" src={scale} alt="" />  
+      <img className="each-card-img" src={imgUrl} alt="product" />
+      <div className="each-card-details">
+        <p>{name}</p>
+        <p>{desc}</p>
+        <p className="each-card-price">{price}</p>
+        <p>{del}</p>
+      </div>
       <button className="cart-btn product-btn" 
       onClick={() =>handleClick(id)}
       type="button">
-        <img className="icons" src={cart} alt=""/>
+        <img className="icons each-icon" src={cart} alt=""/>
       </button>
 
 
