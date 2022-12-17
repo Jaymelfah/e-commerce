@@ -5,9 +5,17 @@ type ModalProps = {
   setModal: Function
   images: string[]
   count: number
+  productArray: {
+    id: number
+    name: string
+    price: string
+    imgUrl: string
+    desc: string
+    del: string
+}[]
 }
 
-export const Modal = ({setModal, images, count}: ModalProps) => {
+export const Modal = ({setModal, images, count, productArray}: ModalProps) => {
 
   const close = () => {
     setModal(false)
@@ -17,7 +25,7 @@ export const Modal = ({setModal, images, count}: ModalProps) => {
     <div className="modal-container flex">
      <AiOutlineClose className="closebtn"onClick={close}/>
      <div className="modal-img flex">
-      <img src={images[count]} alt="imag"/>
+      <img src={productArray[0].imgUrl[count]} alt="imag"/>
      </div>
 
     </div>
