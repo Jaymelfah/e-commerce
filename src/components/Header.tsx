@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../images/logo.png";
+import { Link } from 'react-router-dom';
 import search from "../images/search.png";
 import phone from "../images/phone.png";
 import scale from "../images/scale.png";
@@ -27,7 +28,9 @@ export const Header = ({productArray} : HeaderProps) => {
   return (
     <div className="header-container">
       <div className="logo-container flex">
-        <img className="logo-img" src={logo} alt="logo"></img>
+        <Link to="/">
+          <img className="logo-img" src={logo} alt="logo"></img>
+        </Link>
         <div className="input-div">
           <input className="input" type="text" placeholder="Пошук" />
           <span><img src={search} alt="search"/></span>
@@ -48,8 +51,10 @@ export const Header = ({productArray} : HeaderProps) => {
             <span className="inc-number">1</span>
           </div> 
           <div className="reader">
-            <button className="cart-btn" type="button"><img className="icons" src={cart} alt=""/>
-            <span className="inc-number">{productArray.length}</span></button>
+            <Link to="/cart">
+                <button className="cart-btn" type="button"><img className="icons" src={cart} alt=""/>
+                <span className="inc-number">{productArray.length}</span></button>
+            </Link>
           </div>
           <span>0,0 грн</span>     
         </div>

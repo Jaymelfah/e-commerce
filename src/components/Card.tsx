@@ -31,7 +31,7 @@ export const Card = ({id, name, price, imgUrl, desc, del, setProductArray, produ
         desc: item.desc,
         del: item.del
     }));
-    
+   
 
     const handleClick = (id: number) => {
         const filter = items.filter((item) => item.id === id);

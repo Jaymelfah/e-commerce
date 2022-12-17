@@ -1,16 +1,24 @@
-import React, { useState } from "react";
-import { Header } from "../components/Header";
+import React from "react";
 import { HeaderTwo } from "../components/HeaderTwo";
 import { Products } from "../components/Products";
 import { Sidebar } from "../components/Sidebar";
 
-
-export const ProductPage = () => {
-    const [productArray, setProductArray] = useState([]);
+type ProductPageProps = {
+    setProductArray: Function
+    productArray: {
+        id: number
+        name: string
+        price: string
+        imgUrl: string
+        desc: string
+        del: string
+    }[]
+}
+export const ProductPage = ({setProductArray, productArray}:ProductPageProps) => {
+   
 
   return (
     <div className="product-page flex">
-      <Header productArray={productArray}/>
       <HeaderTwo />
       <div className="product-display">
         <Sidebar />
