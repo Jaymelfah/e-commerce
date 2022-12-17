@@ -11,6 +11,8 @@ In this project I built an ecommerce clone where users can add items to the cart
 - Gitflow
 - Linters Check
 
+## Live Demo
+Please use this [link](https://ecommerce-jay.netlify.app/)
 
 ## Getting Started
 
