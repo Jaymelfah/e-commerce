@@ -8,11 +8,20 @@ type CartProps = {
     setCount: Function
     count: number
     images: string[]
+    productArray: {
+      id: number
+      name: string
+      price: string
+      imgUrl: string
+      desc: string
+      del: string
+  }[]
+
 }
 
-export const Cart = ({count, setCount, setModal, images}: CartProps) => {
+export const Cart = ({count, setCount, setModal, images, productArray}: CartProps) => {
   
-  
+ 
   const openModal = () => {
     setModal(true)
   }
@@ -38,33 +47,36 @@ export const Cart = ({count, setCount, setModal, images}: CartProps) => {
     <>
     <div className="cart-container flex">
       <p>Головна      Каталог      Засоби захисту рослин      Гербіциди      Комманд</p>
-      <div className="specific-details">
+      {
+        productArray.length === 0 ? <p className="no-items">No items added to cart yet....</p>
+        :
+        <div className="specific-details">
         <div className="specific-images">
           <div className="big-img">
             <button onClick={decrement} className="changepic left" type="button"><img src={left} alt="left"/></button>
             <button onClick={increment} className="changepic right" type="button"><img src={right} alt="left"/></button>
 
-            <img src={images[count]} onClick={openModal} alt="product"/>
+            <img src={productArray[0].imgUrl[count]} onClick={openModal} alt="product"/>
           </div>
             <div className="flex smalls-cont">
               <div className="smalls">
-                <img className="small-img" src={images[1]} alt="product"/>
+                <img className="small-img" src={productArray[0].imgUrl[1]} alt="product"/>
               </div>
               <div className="smalls">
-                <img className="small-img" src={images[0]} alt="product"/>
+                <img className="small-img" src={productArray[0].imgUrl[0]} alt="product"/>
               </div>
               <div className="smalls">
-                <img className="small-img" src={images[2]} alt="product"/>
+                <img className="small-img" src={productArray[0].imgUrl[2]} alt="product"/>
               </div>
             </div>
-          
-
         </div>
         <div className="checkout">
           <h1>Гербіцид Комманд®, ФМС УКРАЇНА</h1>
           <img src={group} alt="group" />
         </div>
       </div>
+      }
+    
     </div>
     </>
   );

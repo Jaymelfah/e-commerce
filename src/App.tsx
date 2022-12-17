@@ -20,14 +20,14 @@ function App() {
   
   return (
     <>
-    {modal && <Modal images={images} setModal={setModal} count={count}/>}
+    {modal && <Modal productArray={productArray} images={images} setModal={setModal} count={count}/>}
     <div style={styles}>
      <Navbar />
      <div className="App">
       <Header productArray={productArray}/>
       <Routes>
         <Route path="/" element={<ProductPage setProductArray={setProductArray} productArray={productArray} />} />
-        <Route path="/cart" element={<Cart count={count} setCount={setCount} images={images} setModal={setModal}/>} />
+        <Route path="/cart" element={<Cart productArray={productArray} count={count} setCount={setCount} images={images} setModal={setModal}/>} />
       </Routes>
      </div>
     </div>

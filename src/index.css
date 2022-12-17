@@ -339,3 +339,9 @@
   color: #8c3213;
   position: relative;
 }
+
+.no-items {
+  margin-top: 5rem;
+  color: #8c3213;
+  font-size: 20px;
+}

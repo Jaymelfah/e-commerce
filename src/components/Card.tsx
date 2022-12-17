@@ -15,7 +15,7 @@ type CardProps = {
         id: number
         name: string
         price: string
-        imgUrl: string
+        imgUrl: string[]
         desc: string
         del: string
     }[]
@@ -27,14 +27,14 @@ export const Card = ({id, name, price, imgUrl, desc, del, setProductArray, produ
     const items = storeItems.map((item) => ({
         id: item.id,
         name: item.name,
-        imgUrl: item.imgUrl,
+        imgUrl: [item.imgUrl, "/images/4.svg", "/images/3.svg"],
         desc: item.desc,
         del: item.del
     }));
    
-
+ 
     const handleClick = (id: number) => {
-        const filter = items.filter((item) => item.id === id);
+        const filter = items.find((item) => item.id === id);
         setProductArray([...productArray, filter]);
     }
    

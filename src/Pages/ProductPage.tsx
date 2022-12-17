@@ -9,7 +9,7 @@ type ProductPageProps = {
         id: number
         name: string
         price: string
-        imgUrl: string
+        imgUrl: string[]
         desc: string
         del: string
     }[]
