@@ -4,7 +4,7 @@
 }
 
 .App-container {
-  z-index: -1;
+  z-index: 9999;
   filter: brightness(.2);
   background-color: black;
 }
@@ -23,6 +23,9 @@
 .modal-container {
   z-index: 99999;
   background: #fff;
+  background-image: url(./images/Group\ 201.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
   position: fixed;
   top: 25%;
   bottom: 0;
@@ -31,6 +34,7 @@
   width: 50%;
   height: 400px;
   border: 1px solid black;
+  border-radius: 20px;
 }
 
 .nav-container {
@@ -297,4 +301,24 @@
 .specific-details {
   display: grid;
   grid-template-columns: 45% 55%;
+}
+
+.closebtn {
+  position: absolute;
+  top: -5%;
+  right: -5%;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 30px;
+}
+
+.modal-img {
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+  width: 30%;
+  border-radius: 20px;
+  position: absolute;
+  top: 35%;
+  left: 8%;
 }

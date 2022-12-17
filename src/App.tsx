@@ -8,7 +8,9 @@ import { Cart } from './components/Cart';
 
 function App() {
   const [productArray, setProductArray] = useState<any []>([]);
+  const [count , setCount] = useState(0);
   const [modal, setModal] = useState(false);
+  const images = ["/images/1.svg", "/images/3.svg", "/images/4.svg" ]
 
   const styles = {
     filter: modal ? "brightness(.2)" : "brightness(1)",
@@ -18,14 +20,14 @@ function App() {
   
   return (
     <>
-    {modal && <Modal setModal={setModal}/>}
+    {modal && <Modal images={images} setModal={setModal} count={count}/>}
     <div style={styles}>
      <Navbar />
      <div className="App">
       <Header productArray={productArray}/>
       <Routes>
         <Route path="/" element={<ProductPage setProductArray={setProductArray} productArray={productArray} />} />
-        <Route path="/cart" element={<Cart productArray={productArray} setModal={setModal}/>} />
+        <Route path="/cart" element={<Cart count={count} setCount={setCount} images={images} setModal={setModal}/>} />
       </Routes>
      </div>
     </div>
