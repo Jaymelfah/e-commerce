@@ -1,4 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # E-commerce Clone
 In this project I built an ecommerce clone where users can add items to the cart and view images of the items.
