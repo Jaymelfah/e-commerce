@@ -3,14 +3,14 @@ import logo from "../images/logo.png";
 import { Link } from 'react-router-dom';
 import search from "../images/search.png";
 import phone from "../images/phone.png";
-import scale from "../images/scale.png";
-import cart from "../images/cart.png";
 import seeds from "../images/seeds 2.png";
 import sapling from "../images/sapling 2.png";
 import fertilizer from "../images/fertilizer 2.png";
 import frame from "../images/Frame.png";
 import vector from "../images/Vector (1).png";
+import { FaBalanceScaleLeft } from "react-icons/fa";
 import { BsHeart } from "react-icons/bs";
+import { BsCart } from "react-icons/bs";
 
 type HeaderProps = {
     productArray: {
@@ -43,16 +43,16 @@ export const Header = ({productArray} : HeaderProps) => {
           </div>    
         </div>
         <div className="cart flex">
-          <div>
+          <div className="carticon">
             <BsHeart />
           </div>
-          <div className="reader">
-            <img className="icons" src={scale} alt="" />
+          <div className="carticon">
+            <FaBalanceScaleLeft />
             <span className="inc-number">1</span>
           </div> 
           <div className="reader">
             <Link to="/cart">
-                <button className="cart-btn" type="button"><img className="icons" src={cart} alt=""/>
+                <button className="cart-btn" type="button"><BsCart/>
                 <span className="inc-number">{productArray.length}</span></button>
             </Link>
           </div>

@@ -1,7 +1,7 @@
 import React from "react";
-import cart from "../images/cart.png";
 import storeItems from "../data/items.json";
 import scale from "../images/scale.png";
+import { BsCart } from "react-icons/bs";
 
 type CardProps = {
     id: number
@@ -51,7 +51,8 @@ export const Card = ({id, name, price, imgUrl, desc, del, setProductArray, produ
       <button className="cart-btn product-btn" 
       onClick={() =>handleClick(id)}
       type="button">
-        <img className="icons each-icon" src={cart} alt=""/>
+        <BsCart />
+        {/* <img className="icons each-icon" src={cart} alt=""/> */}
       </button>
 
 
